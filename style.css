@@ -1,0 +1,76 @@
+/* Resetare stiluri */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Stilizare generală */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa; /* Culoare de fundal */
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    background-color: #dc3545; /* Culoare de fundal a antetului */
+    color: #fff; /* Culoare text antet */
+    padding: 20px 0;
+    transition: background-color 0.3s ease; /* Tranzitie culoare de fundal */
+}
+
+header:hover {
+    background-color: #c82333; /* Culoare de fundal la hover */
+}
+
+header h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #fff; /* Culoare link-uri antet */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+.section {
+    padding: 40px 0;
+}
+
+.section h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+footer {
+    background-color: #f8f9fa; /* Culoare de fundal a subsolului */
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 40px;
+}
+
+footer p {
+    font-size: 14px;
+    color: #666;
+}
