@@ -1,2 +1,3 @@
 git checkout main
+git add index.html styles.css
 
