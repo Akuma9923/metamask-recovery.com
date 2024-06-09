@@ -8,7 +8,7 @@
 /* Stilizare generală */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f8f9fa;
+    background-color: #f8f9fa; /* Culoare de fundal */
     color: #333;
     line-height: 1.6;
 }
@@ -17,6 +17,9 @@ body {
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
+    background-color: #fff; /* Culoare de fundal a containerului */
+    border-radius: 10px; /* Rotunjirea colțurilor containerului */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Umbra containerului */
 }
 
 header {
