@@ -14,57 +14,58 @@ body {
 }
 
 .container {
-    max-width: 800px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
-    background-color: #fff; /* Culoare de fundal a containerului */
-    border-radius: 10px; /* Rotunjirea colțurilor containerului */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Umbra containerului */
 }
 
 header {
-    text-align: center;
-    margin-bottom: 40px;
+    background-color: #007bff; /* Culoare de fundal a antetului */
+    color: #fff; /* Culoare text antet */
+    padding: 20px 0;
 }
 
-h1 {
+header h1 {
     font-size: 36px;
     margin-bottom: 20px;
-    color: #333;
 }
 
-section {
-    margin-bottom: 40px;
+nav ul {
+    list-style: none;
 }
 
-h2 {
-    font-size: 24px;
-    margin-bottom: 10px;
-    color: #333;
+nav ul li {
+    display: inline;
+    margin-right: 20px;
 }
 
-p {
-    font-size: 16px;
-    margin-bottom: 20px;
-    color: #555;
-}
-
-footer {
-    text-align: center;
-    margin-top: 40px;
-    padding-top: 20px;
-    border-top: 1px solid #ccc;
-    color: #666;
-}
-
-/* Stilizare link-uri */
-a {
-    color: #007bff;
+nav ul li a {
+    color: #fff; /* Culoare link-uri antet */
     text-decoration: none;
+    font-weight: bold;
 }
 
-a:hover {
+nav ul li a:hover {
     text-decoration: underline;
 }
 
+.section {
+    padding: 40px 0;
+}
 
+.section h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+footer {
+    background-color: #f8f9fa; /* Culoare de fundal a subsolului */
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 40px;
+}
+
+footer p {
+    font-size: 14px;
+    color: #666;
+}
