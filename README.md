@@ -1,1 +1,1 @@
-# metamask-recovery-site
+# metamask-recovery
