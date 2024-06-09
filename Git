@@ -1,0 +1,5 @@
+git init
+git add index.html styles.css script.js
+git commit -m "Initial commit with website files"
+git remote add origin https://github.com/Akuma9923/metamask-recovery.com.git
+git push -u origin main
