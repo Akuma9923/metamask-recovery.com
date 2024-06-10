@@ -1,26 +1,3 @@
-theme: jekyll-theme-minimal
-
-plugins:
-  - jekyll-feed
-
-include:
-  - README.md
-
-defaults:
-  - scope:
-      path: ""
-      type: "posts"
-    values:
-      layout: "post"
-      author: "Your Name"
-
-# Adaugă subdomenii personalizate
-subdomains:
-  - name: "Subdomeniu1"
-    url: "https://akuma9923.github.io/metamask-recovery.com/subdomeniu1/"
-  - name: "Subdomeniu2"
-    url: "https://akuma9923.github.io/metamask-recovery.com/subdomeniu2/"
-  # Adaugă oricâte subdomenii dorești
 <!DOCTYPE html>
 <html lang="en">
 <head>
