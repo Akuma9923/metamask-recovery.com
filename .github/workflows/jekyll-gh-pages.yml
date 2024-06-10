@@ -3,7 +3,7 @@ name: Build and Deploy Jekyll site to GitHub Pages
 on:
   push:
     branches:
-      - main  # sau branch-ul tău principal
+      - main  # sau branch-ul principal al proiectului tău
 
 jobs:
   build:
@@ -16,7 +16,7 @@ jobs:
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 2.7  # Versiunea Ruby necesară pentru Jekyll
+          ruby-version: '2.7'  # Asigură-te că versiunea Ruby este compatibilă cu Jekyll
 
       - name: Install dependencies
         run: |
