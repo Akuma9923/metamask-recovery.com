@@ -1,24 +1,39 @@
-name: Build and Deploy Static Site
+theme: jekyll-theme-minimal
 
-on:
-  push:
-    branches:
-      - master
+plugins:
+  - jekyll-feed
 
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v2
+include:
+  - README.md
 
-      - name: Build Jekyll Site
-        run: |
-          bundle install
-          bundle exec jekyll build
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Your Name"
 
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-          publish_dir: ./_site
+# Adaugă subdomenii personalizate
+subdomains:
+  - name: "Subdomeniu1"
+    url: "https://akuma9923.github.io/metamask-recovery.com/subdomeniu1/"
+  - name: "Subdomeniu2"
+    url: "https://akuma9923.github.io/metamask-recovery.com/subdomeniu2/"
+  # Adaugă oricâte subdomenii dorești
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Subdomenii</title>
+</head>
+<body>
+  <h1>Subdomenii:</h1>
+  <ul>
+    <li><a href="https://akuma9923.github.io/metamask-recovery.com/subdomeniu1/">Subdomeniu1</a></li>
+    <li><a href="https://akuma9923.github.io/metamask-recovery.com/subdomeniu2/">Subdomeniu2</a></li>
+    <!-- Adaugă oricâte subdomenii dorești -->
+  </ul>
+</body>
+</html>
