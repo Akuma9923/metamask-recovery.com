@@ -1,88 +1,33 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f8f8f8;
-    color: #333;
-    text-align: center;
-    margin: 0;
-    padding: 0;
-}
+name: Build and Deploy Jekyll site to GitHub Pages
 
-.container {
-    padding: 50px;
-}
+on:
+  push:
+    branches:
+      - main  # sau branch-ul tău principal
 
-h1 {
-    color: #ff4d4d; /* Red color */
-    font-size: 36px;
-    margin-bottom: 20px;
-    animation: fadeIn 2s ease-in-out;
-}
+jobs:
+  build:
+    runs-on: ubuntu-latest
 
-h2 {
-    font-size: 24px;
-    color: #333;
-    margin-bottom: 20px;
-    animation: fadeIn 2s ease-in-out;
-}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
 
-p {
-    font-size: 18px;
-    color: #666;
-    margin-bottom: 20px;
-    animation: fadeIn 2s ease-in-out;
-}
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 2.7  # Versiunea Ruby necesară pentru Jekyll
 
-a {
-    color: #ff4d4d; /* Red color */
-    text-decoration: none;
-    font-weight: bold;
-    animation: fadeIn 2s ease-in-out;
-}
+      - name: Install dependencies
+        run: |
+          gem install bundler
+          bundle install
 
-a:hover {
-    text-decoration: underline;
-}
+      - name: Build site with Jekyll
+        run: bundle exec jekyll build
 
-footer {
-    margin-top: 50px;
-    font-size: 14px;
-    color: #999;
-}
-
-@keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
-}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Metamask Recovery</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <div class="container">
-        <h1>Metamask Recovery</h1>
-        <h2>Recover Your Metamask Account</h2>
-        <div class="card">
-            <h2>Instructions</h2>
-            <ol>
-                <li>Step 1: Open Metamask</li>
-                <li>Step 2: Click on "Settings"</li>
-                <li>Step 3: Click on "Security & Privacy"</li>
-                <li>Step 4: Click on "Reveal Seed Phrase"</li>
-                <li>Step 5: Enter your password and click "Continue"</li>
-                <li>Step 6: Write down your 12-word seed phrase and keep it safe!</li>
-            </ol>
-        </div>
-        <div class="card">
-            <h2>Contact Us</h2>
-            <p>If you need further assistance, feel free to contact us at <a href="mailto:example@example.com">example@example.com</a>.</p>
-        </div>
-    </div>
-    <footer>
-        <p>&copy; 2024 Metamask Recovery. All rights reserved.</p>
-    </footer>
-</body>
-</html>
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./_site
