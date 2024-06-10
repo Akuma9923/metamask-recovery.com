@@ -1,41 +1,21 @@
-name: Build and Deploy Static Site
+name: Static Site Deploy
 
 on:
   push:
     branches:
-      - main  # se poate schimba în funcție de branch-ul pe care vrei să activezi acest workflow
+      - main  # Actualizează cu numele branch-ului tău principal
 
 jobs:
-  build-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2  # actualizat la v2
+    - name: Checkout code
+      uses: actions/checkout@v2
 
-      - name: Build static site
-        run: |
-          # Aici introdu comanda pentru a construi site-ul static
-          # De exemplu, dacă folosești Jekyll:
-          bundle exec jekyll build
-
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./_site
-          - name: Checkout repository
-          uses: actions/checkout@v2
-          - name: Setup Ruby
-  uses: ruby/setup-ruby@v1
-  with:
-    ruby-version: 2.7
     - name: Deploy to GitHub Pages
-    uses: peaceiris/actions-gh-pages@v3
-    - name: Deploy to GitHub Pages
-    uses: peaceiris/actions-gh-pages@v3
-    with:
-      deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-      publish_dir: ./_site
-      commit_message: "Build and deploy site to GitHub Pages"
-     
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+        publish_dir: ./  # Actualizează cu directorul în care se află fișierele statice ale site-ului tău
+        force_orphan: true

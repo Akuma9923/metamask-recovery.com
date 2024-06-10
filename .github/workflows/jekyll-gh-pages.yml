@@ -1,35 +1,34 @@
-name: Build and Deploy Jekyll Site
+name: Deploy to GitHub Pages
 
 on:
   push:
     branches:
-      - main  # Folosim "main" deoarece acesta este branch-ul principal
+      - main  # Actualizează cu numele branch-ului tău principal
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4  # Actualizat la v4 pentru compatibilitate cu Node.js 20
+    - name: Checkout code
+      uses: actions/checkout@v2
 
     - name: Setup Ruby
       uses: ruby/setup-ruby@v1
       with:
-        ruby-version: 2.7
+        ruby-version: 2.7  # Actualizează cu versiunea Ruby folosită în proiectul tău
 
     - name: Install dependencies
       run: |
-        gem install bundler -v 2.4.22
+        gem install bundler
         bundle install
 
     - name: Build Jekyll site
-      run: |
-        bundle exec jekyll build
+      run: bundle exec jekyll build
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
         deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
         publish_dir: ./_site
-        cname: subdomeniu.domeniu.com  # înlocuiește cu subdomeniul tău, dacă este cazul
+        force_orphan: true
