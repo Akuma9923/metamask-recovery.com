@@ -28,3 +28,58 @@ body {
 h1 {
     color: #e74c3c; /* Culoare roșie */
 }
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+    color: #333;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    padding: 50px;
+}
+
+h1 {
+    color: #ff4d4d; /* Red color */
+    font-size: 36px;
+    margin-bottom: 20px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+p {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 20px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+a {
+    color: #ff4d4d; /* Red color */
+    text-decoration: none;
+    font-weight: bold;
+    animation: fadeIn 2s ease-in-out;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    margin-top: 50px;
+    font-size: 14px;
+    color: #999;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
