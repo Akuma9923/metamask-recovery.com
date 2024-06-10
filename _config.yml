@@ -1,0 +1,21 @@
+# Configurare de bază pentru un site Jekyll
+
+# Setările generale
+title: Numele site-ului
+description: Descrierea site-ului
+url: "https://nume-site.com" # URL-ul de bază al site-ului
+
+# Setările de construire și publicare
+theme: jekyll-theme-minimal # Tema folosită pentru site
+plugins:
+  - jekyll-feed
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - _site
+
+# Alte setări opționale
+markdown: kramdown # Motorul de procesare Markdown
+permalink: /:title/ # Structura permalinks-urilor
