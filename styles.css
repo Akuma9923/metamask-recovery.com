@@ -1,0 +1,30 @@
+/* Resetare stiluri */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Stilizare generală */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0; /* Fundal gri deschis */
+    color: #333; /* Culoare text negru */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+    padding: 20px;
+    background-color: #fff; /* Fundal alb */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Umbra pentru efect de ridicare */
+    border-radius: 10px;
+}
+
+h1 {
+    color: #e74c3c; /* Culoare roșie */
+}
