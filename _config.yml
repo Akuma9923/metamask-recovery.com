@@ -1,21 +1,24 @@
-# Configurare de bază pentru un site Jekyll
+name: Build and Deploy Static Site
 
-# Setările generale
-title: Numele site-ului
-description: Descrierea site-ului
-url: "https://nume-site.com" # URL-ul de bază al site-ului
+on:
+  push:
+    branches:
+      - master
 
-# Setările de construire și publicare
-theme: jekyll-theme-minimal # Tema folosită pentru site
-plugins:
-  - jekyll-feed
-exclude:
-  - Gemfile
-  - Gemfile.lock
-  - node_modules
-  - vendor
-  - _site
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
 
-# Alte setări opționale
-markdown: kramdown # Motorul de procesare Markdown
-permalink: /:title/ # Structura permalinks-urilor
+      - name: Build Jekyll Site
+        run: |
+          bundle install
+          bundle exec jekyll build
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          publish_dir: ./_site
