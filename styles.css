@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f8f8f8;
+    background-color: #ffe6e6; /* Light red background */
     color: #333;
     text-align: center;
     margin: 0;
@@ -12,7 +12,7 @@ body {
 }
 
 h1 {
-    color: #ff4d4d; /* Red color */
+    color: #cc0000; /* Dark red color */
     font-size: 36px;
     margin-bottom: 20px;
     animation: fadeIn 2s ease-in-out;
@@ -25,7 +25,7 @@ h2 {
     animation: fadeIn 2s ease-in-out;
 }
 
-p {
+p, ol {
     font-size: 18px;
     color: #666;
     margin-bottom: 20px;
@@ -33,7 +33,7 @@ p {
 }
 
 a {
-    color: #ff4d4d; /* Red color */
+    color: #cc0000; /* Dark red color */
     text-decoration: none;
     font-weight: bold;
     animation: fadeIn 2s ease-in-out;
@@ -52,4 +52,23 @@ footer {
 @keyframes fadeIn {
     0% { opacity: 0; }
     100% { opacity: 1; }
+}
+
+.card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin: 20px;
+    padding: 20px;
+    text-align: left;
+    display: inline-block;
+    width: calc(33% - 40px);
+}
+
+.card h2 {
+    color: #cc0000;
+}
+
+.card p {
+    color: #333;
 }
