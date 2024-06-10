@@ -33,3 +33,10 @@ jobs:
         deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
         publish_dir: ./_site
         cname: subdomeniu.domeniu.com  # înlocuiește cu subdomeniul tău, dacă este cazul
+        - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./_site
+          cname: subdomeniu.domeniu.com  # înlocuiește cu subdomeniul tău, dacă este cazul
+      
