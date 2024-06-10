@@ -74,3 +74,13 @@ footer p {
     font-size: 14px;
     color: #666;
 }
+/* Resetare stiluri */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Stilizare generală */
+body {
+    font-family: Arial, sans
