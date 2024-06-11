@@ -3,32 +3,30 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main  # Actualizează cu numele branch-ului tău principal
+      - main  # Set the branch to deploy from
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
+    - name: Checkout repository
       uses: actions/checkout@v2
 
     - name: Setup Ruby
       uses: ruby/setup-ruby@v1
       with:
-        ruby-version: 2.7  # Actualizează cu versiunea Ruby folosită în proiectul tău
+        ruby-version: 3.0.2  # Specifică versiunea Ruby
 
     - name: Install dependencies
       run: |
         gem install bundler
-        bundle install
+        bundle install --jobs 4 --retry 3
 
-    - name: Build Jekyll site
-      run: bundle exec jekyll build
-
-    - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-        publish_dir: ./_site
-        force_orphan: true
+    - name: Build and deploy
+      run: |
+        JEKYLL_ENV=production bundle exec jekyll build -d build
+        touch build/.nojekyll  # create .nojekyll file to prevent Jekyll processing
+        git add build
+        git commit -m "Build Jekyll site"
+        git push origin HEAD:gh-pages
