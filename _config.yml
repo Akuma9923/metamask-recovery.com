@@ -20,3 +20,6 @@ description: Descrierea Site-ului
 theme: minima # Sau poți folosi un alt tema
 plugins:
   - jekyll-feed
+  title: Metamask Recovery 1
+description: O descriere scurtă a site-ului tău
+
