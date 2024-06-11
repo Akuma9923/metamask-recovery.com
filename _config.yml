@@ -14,3 +14,9 @@
   </ul>
 </body>
 </html>
+title: Metamask Recovery
+Recover Your Metamask Account
+description: Descrierea Site-ului
+theme: minima # Sau poți folosi un alt tema
+plugins:
+  - jekyll-feed
