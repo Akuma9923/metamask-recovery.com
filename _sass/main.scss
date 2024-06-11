@@ -11,3 +11,35 @@ body {
 h1 {
     color: #007bff;
 }
+---
+# Leave an empty YAML front matter
+---
+
+// Your SCSS code here
+
+// Font
+body {
+    font-family: Arial, sans-serif;
+}
+
+// Colors
+$primary-color: #007bff; // Blue
+$secondary-color: #6c757d; // Gray
+$background-color: #f0f0f0; // Light gray
+
+body {
+    color: $secondary-color;
+    background-color: $background-color;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: $primary-color;
+}
+
+// Margins
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
